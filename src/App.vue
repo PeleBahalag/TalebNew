@@ -1,10 +1,32 @@
 <template>
   <div id="app">
-    <starter-comp v-if="showPage === 1" @curr-page="switchScreen"></starter-comp>
-    <home-page v-if="showPage === 2" @curr-page="switchScreen" @picked-subject="subjectSwitch"></home-page>
-    <study-page v-if="showPage === 3" @curr-page="switchScreen" :subjectsName="subjectsName" :subNumber="subNumber"></study-page>
-    <game-home  v-if="showPage === 4" @curr-page="switchScreen" @player-status="playerState" :subNumber="subNumber"></game-home>
-    <ending-screen v-if="showPage === 5" @curr-page="switchScreen" :playerStat="winOrLose"  :scorePlayer="score"></ending-screen>
+    <starter-comp
+      v-if="showPage === 1"
+      @curr-page="switchScreen"
+    ></starter-comp>
+    <home-page
+      v-if="showPage === 2"
+      @curr-page="switchScreen"
+      @picked-subject="subjectSwitch"
+    ></home-page>
+    <study-page
+      v-if="showPage === 3"
+      @curr-page="switchScreen"
+      :subjectsName="subjectsName"
+      :subNumber="subNumber"
+    ></study-page>
+    <game-home
+      v-if="showPage === 4"
+      @curr-page="switchScreen"
+      @player-status="playerState"
+      :subNumber="subNumber"
+    ></game-home>
+    <ending-screen
+      v-if="showPage === 5"
+      @curr-page="switchScreen"
+      :playerStat="winOrLose"
+      :scorePlayer="score"
+    ></ending-screen>
   </div>
 </template>
 
@@ -24,7 +46,7 @@ export default {
       subNumber: 0,
       winOrLose: 0,
       score: 0,
-    }
+    };
   },
   components: {
     StarterComp,
@@ -37,35 +59,47 @@ export default {
     switchScreen(pageNum) {
       this.showPage = pageNum;
     },
-    subjectSwitch(subName){
+    subjectSwitch(subName) {
       this.subjectsName = subName;
-    switch(subName) {
-      case "program":
-        this.subNumber = 0;
-      break;
-      case "faculty":
-        this.subNumber = 1;
-      break;
-      case "students":
-        this.subNumber = 2;
-      break;
-    default:
-    // code block
-}
+      switch (subName) {
+        case "program":
+          this.subNumber = 0;
+          break;
+        case "faculty":
+          this.subNumber = 1;
+          break;
+        case "students":
+          this.subNumber = 2;
+          break;
+        default:
+        // code block
+      }
     },
-    playerState(player, score){
+    playerState(player, score) {
       console.log(score);
       this.score = score;
       this.winOrLose = player;
-    }
-  }
-
-}
+    },
+  },
+};
 </script>
 
 <style>
-* {
+*{
   height: 100%;
   width: 100%;
 }
+html {
+    background-image: url("assets/photos/TalebBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 0vw;
+  top: 0vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+}
+
+
 </style>

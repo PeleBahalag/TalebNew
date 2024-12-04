@@ -34,24 +34,21 @@ export default {
 
 <style scoped>
 #home_page {
-    background-image: url("../assets/photos/TalebBackground.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
+    height: 100lvh;
+    width: 100lvw;
 }
 
 .top_symbols {
     position: absolute;
-    width: 100vw;
-    height: 10vh;
-    top: 0vh;
+    width: 100svw;
+    height: 10svh;
+    top: 0svh;
 }
 
 #bahalag_symbol {
     position: absolute;
-    height: 85%;
-    width: 20%;
+    height: 85lvh;
+    width: 20lvw;
     left: 1%;
     top: 10%;
 }
@@ -97,7 +94,7 @@ export default {
 }
 
 #program {
-  right: 4%;
+  right: 36%;
   top: 32%;
 }
 

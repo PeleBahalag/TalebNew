@@ -39,34 +39,6 @@ export default {
         return {
             program: [
             {
-            question: '',
-            answers: [
-                '',
-                ' ',
-            ],
-            correct_answer: '',
-            },
-            {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer: '',
-            },
-            {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer: '',
-            },
-            {
             question: 'מה צריך לעשות טרם מבחן הערכת חניך, עיוני ומעשי?',
             answers: [
                 'בעיוני יש לפרסם לחניכים את הנושאים עליהם הם עתידים להיבחן. במעשי יש לפרסם את דף ההערכה.',
@@ -107,14 +79,6 @@ export default {
             correct_answer: 'קצין מגמה',
             },
             {
-            question: '',
-            answers: [
-                '',
-                ' ',
-            ],
-            correct_answer: '',
-            },
-            {
             question: '"הכנת סגל תבנה בחילוק לארבעה צירים", בחר בתשובה השייכת לארבעת הצירים.',
             answers: [
                 'הציר הפיקודי',
@@ -134,26 +98,6 @@ export default {
             ],
             correct_answer:  'תהליך שיטתי ומובן, המאורגן בתוכנית קבועה מראש. התהליך מתחיל מיום קליטתו ועד סיום תפקידו.',
             },
-             {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer: '',
-            },
-            {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer: '',
-            },
             ],
             students: [
             {
@@ -165,16 +109,6 @@ export default {
                 'לבקש מהחניך הכי טוב בכיתה להסביר לו את החומר'
             ],
             correct_answer: 'שעות תיגבור, זמנים ללמידה עצמית, מועדי מבחנים חוזרים, התנסויות והצמדת חונך מקצועי.',
-            },
-            {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer:  '',
             },
             {
             question: '"תהליך בחירת חניך מצטיין וחניך למופת נועד..."',
@@ -196,26 +130,6 @@ export default {
             ],
             correct_answer: 'סוציומטרי עמיתים גבוה',
             },
-            {
-            question: 'מה הוא תיק אישי לחניך?',
-            answers: [
-                'תיק אישי לחניך משמש אמצעי לאיסוף המידע וריכוזו במכלול נושאים בעלי רלוונטיות לחניכים בקורס.',
-                'תיק אישי לחניך משמש כלי לאיסוף מידע מישמעתי וציון סופי בהכשרה',
-                'תיק אישי לחניך משמש אמצעי לאיסוף מידע משפחתי על החניך',
-                'תיק אישי לחניך משמש אמצעי לאיסוף המידע הלימודי בלבד '
-            ],
-            correct_answer:  'תיק אישי לחניך משמש אמצעי לאיסוף המידע וריכוזו במכלול נושאים בעלי רלוונטיות לחניכים בקורס.',
-            },
-            {
-            question: '',
-            answers: [
-                '',
-                '',
-                '',
-                ''
-            ],
-            correct_answer: '',
-            },
             ], 
             currentQuestion: 0,
             answered: 0,
@@ -229,7 +143,7 @@ export default {
                 var MyAnswer = event.target.innerText;
                 this.answered = this.answered + 1;
 
-                if(this.answered === 6){
+                if(this.answered === 5){
                     this.correctAnswers = this.correctAnswers + 1;
                     this.startOver();
                 }

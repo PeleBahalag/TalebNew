@@ -118,11 +118,13 @@ export default {
       arrayFour: [
         [
           "",
-          "חייל יכול להתקשות בתחומים הבאים: שפה, כושר, קליעה, תוכן מקצועי או בכל תחום אחר שבו ההכשרה נוגעת. דרכי הפעולה לקידום החניך:",
+          "<p>חייל יכול להתקשות בתחומים הבאים: שפה, כושר, קליעה, תוכן מקצועי או בכל תחום אחר שבו ההכשרה נוגעת. דרכי הפעולה לקידום החניך: <br> - שעות תגבור <br> -זמנים ללמידה עצמית <br> -מועדי מבחנים חוזרים <br> -התנסויות <br> -והצמדת חונך מקצועי</p>",
+          
         ],
         [
           "תהליך בחירת חניך מצטיין וחניך למופת מעודדת מצוינות ומאפשרת להדגיש את ההתנהגות וההישגים הרצויים בהכשרה. תהליך בחירת חניך מצטיין וחניך למופת נועד להגביר את הרצון להשקיע בהכשרה ולתגמל חניכים שהשקיעו בהכשרה ושהגיעו להישגים שבולטים לטובה.",
-          "התבחינים להצטיינות למופת יתייחסו למרכיבים האלה: חיילות והתנהגות ערכית,  הישגים לימודיים,  התנהגות ראויה לציון לשבח: למשל סיוע לחברי הקורס, יוזמה, התנדבות, ללא עבירות משמעת.",
+          "<p>להלן קריטריונים תומכים לבחירת חניך מצטיין וחניך למופת: <br> חניך מצטיין: <br> ציונים גבוהים - ציון סופי מעל 80, חו''ד מפקד בולט לחיוב, ללא אירועי משמעת משמעותיים, סוציומטרי עמיתים גבוה(במידה וקיים) ותכונותיו העיקריות אשר יבואו לידי ביטוי הן: <br> חתירה למצוינות, יוזמה, עזרה לזולת והתמדה.</p>",
+          "<p>חניך למופת: <br> חו''ד מפקד בולט לחיוב, ללא אירועי משמעת משמעותיים, סוציומטרי עמיתים גבוה(במידה וקיים), תכונותיו העיקריות אשר יבואו לידי ביטוי הינן:<br>השקעה, יוזמה, עזרה לזולת, התמדה, למידה והשתפרות.</p>"
         ],
         [
           "תיק אישי לחניך משמש אמצעי לאיסוף המידע וריכוזו במכלול נושאים בעלי רלוונטיות לחניכים בקורס. הוא מהווה מעקב מסודר ושיטתי ומאפשר איתור מוקדם של בעיות לימודיות, חברתיות ואישיות.",
@@ -160,7 +162,7 @@ export default {
       if (this.choosen === 0) {
         if (this.arrayTwo[this.i][this.j + 1] === undefined) {
           document.getElementById("next_chapter").style.display = "block";
-          this.nextChapter();
+           document.getElementById("next_button").style.display = "none";
         } else {
           document.getElementById("next_button").style.display = "block";
           this.j = this.j + 1;
@@ -168,7 +170,7 @@ export default {
       } else if (this.choosen === 1) {
         if (this.arrayThree[this.i][this.j + 1] === undefined) {
           document.getElementById("next_chapter").style.display = "block";
-          this.nextChapter();
+           document.getElementById("next_button").style.display = "none";
         } else {
           document.getElementById("next_button").style.display = "block";
           this.j = this.j + 1;
@@ -176,7 +178,7 @@ export default {
       } else {
         if (this.arrayFour[this.i][this.j + 1] === undefined) {
           document.getElementById("next_chapter").style.display = "block";
-          this.nextChapter();
+           document.getElementById("next_button").style.display = "none";
         } else {
           document.getElementById("next_button").style.display = "block";
           this.j = this.j + 1;
@@ -185,17 +187,12 @@ export default {
     },
 
     nextChapter() {
-      if (this.i === 0) {
-        document.getElementById("next_chapter").style.display = "none";
-        document.getElementById("final_chapter").style.display = "block";
-        document.getElementById("next_button").style.display = "none";
-      } else {
-        this.$emit("make-progress", this.i);
-        this.i = this.i + 1;
-        this.j = 0;
-        document.getElementById("next_button").style.display = "block";
-        document.getElementById("next_chapter").style.display = "none";
-      }
+      console.log(this.i);
+      this.$emit("make-progress", this.i);
+      this.i = this.i + 1;
+      this.j = 0;
+      document.getElementById("next_button").style.display = "block";
+      document.getElementById("next_chapter").style.display = "none";
     },
 
     lastChapter() {
